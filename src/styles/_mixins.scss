@@ -1,0 +1,58 @@
+@use 'variables' as *;
+
+@mixin page-padding {
+  padding-left: $padding-mobile;
+  padding-right: $padding-mobile;
+
+  @media (min-width: $bp-tablet) {
+    padding-left: $padding-tablet;
+    padding-right: $padding-tablet;
+  }
+
+  @media (min-width: $bp-desktop) {
+    padding-left: $padding-desktop;
+    padding-right: $padding-desktop;
+  }
+}
+
+@mixin details-content-box {
+  max-width: $details-content-max-width;
+  margin-inline: auto;
+}
+
+@mixin page-bleed {
+  margin-left: -$padding-mobile;
+  margin-right: -$padding-mobile;
+
+  @media (min-width: $bp-tablet) {
+    margin-left: -$padding-tablet;
+    margin-right: -$padding-tablet;
+  }
+
+  @media (min-width: $bp-desktop) {
+    margin-left: -$padding-desktop;
+    margin-right: -$padding-desktop;
+  }
+}
+
+@mixin content-inset {
+  padding-left: $padding-mobile;
+  padding-right: $padding-mobile;
+
+  @media (min-width: $bp-tablet) {
+    padding-left: $padding-tablet;
+    padding-right: $padding-tablet;
+  }
+
+  @media (min-width: $bp-desktop) {
+    padding-left: $padding-detail-desktop;
+    padding-right: $padding-detail-desktop;
+  }
+}
+
+@mixin sticky-subheader {
+  position: sticky;
+  top: $header-height;
+  z-index: 10;
+  background-color: #fff;
+}

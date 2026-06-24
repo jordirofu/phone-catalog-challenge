@@ -1,0 +1,35 @@
+@use '../variables' as *;
+
+.color-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &__label {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  &__options {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__swatch {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #fff;
+    outline: 1px solid $color-selector-unselected;
+    cursor: pointer;
+
+    &:hover,
+    &--selected {
+      outline-color: $color-selector-selected;
+    }
+  }
+
+  &__name {
+    font-size: 12px;
+    min-height: 1.25em;
+  }
+}

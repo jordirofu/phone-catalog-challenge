@@ -1,0 +1,43 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.phone-specs {
+  @include page-padding-detail;
+  margin-bottom: 64px;
+
+  &__title {
+    font-size: 18px;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $color-lines;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+
+  &__row {
+    border-bottom: 1px solid $color-lines;
+  }
+
+  &__label {
+    width: 175px;
+
+    @media (min-width: $bp-tablet) {
+      width: 350px;
+    }
+
+    padding: 12px 0;
+    text-align: left;
+    font-weight: normal;
+    text-transform: uppercase;
+    vertical-align: top;
+  }
+
+  &__value {
+    padding: 12px 0;
+  }
+}
