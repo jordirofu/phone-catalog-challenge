@@ -3,21 +3,29 @@
 .color-selector {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
+
+  @media (min-width: $bp-desktop) {
+    gap: 24px;
+  }
 
   &__label {
-    font-size: 12px;
+    font-size: $font-size-sm;
     text-transform: uppercase;
+
+    @media (min-width: $bp-desktop) {
+      font-size: $font-size-md;
+    }
   }
 
   &__options {
     display: flex;
-    gap: 8px;
+    gap: 16px;
   }
 
   &__swatch {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     border: 2px solid #fff;
     outline: 1px solid $color-selector-unselected;
     cursor: pointer;
@@ -29,7 +37,11 @@
   }
 
   &__name {
-    font-size: 12px;
+    font-size: $font-size-sm;
     min-height: 1.25em;
+
+    @media (min-width: $bp-desktop) {
+      font-size: $font-size-md;
+    }
   }
 }

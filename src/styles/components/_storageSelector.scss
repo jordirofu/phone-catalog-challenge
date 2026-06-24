@@ -3,11 +3,19 @@
 .storage-selector {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
+
+  @media (min-width: $bp-desktop) {
+    gap: 24px;
+  }
 
   &__label {
-    font-size: 12px;
+    font-size: $font-size-sm;
     text-transform: uppercase;
+
+    @media (min-width: $bp-desktop) {
+      font-size: $font-size-md;
+    }
   }
 
   &__options {
@@ -16,11 +24,20 @@
 
   &__btn {
     position: relative;
-    padding: 8px 16px;
-    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 92px;
+    height: 48px;
+    font-size: $font-size-sm;
     border: 1px solid $color-selector-unselected;
     background-color: #fff;
     cursor: pointer;
+
+    @media (min-width: $bp-desktop) {
+      height: 65px;
+      font-size: $font-size-md;
+    }
 
     &:not(:first-child) {
       margin-left: -1px;

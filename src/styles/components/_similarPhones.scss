@@ -8,7 +8,7 @@
   &__title {
     @include content-inset;
     margin-bottom: 16px;
-    font-size: 18px;
+    font-size: $font-size-lg;
     font-weight: normal;
     text-transform: uppercase;
   }

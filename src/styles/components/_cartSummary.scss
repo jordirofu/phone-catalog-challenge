@@ -28,7 +28,7 @@
     flex-basis: 100%;
     display: flex;
     justify-content: space-between;
-    font-size: 14px;
+    font-size: $font-size-md;
     text-transform: uppercase;
 
     @media (min-width: $bp-tablet) {
@@ -45,7 +45,7 @@
     align-items: center;
     justify-content: center;
     height: 48px;
-    font-size: 12px;
+    font-size: $font-size-sm;
     text-transform: uppercase;
     cursor: pointer;
 

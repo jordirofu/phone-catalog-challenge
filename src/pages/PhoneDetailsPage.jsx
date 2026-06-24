@@ -55,20 +55,26 @@ export default function PhoneDetailsPage() {
           </div>
 
           <div className="phone-details__info">
-            <h1 className="phone-details__name">{phoneDetails.name}</h1>
-            <p className="phone-details__price">
-              {selectedStorage ? `${price} EUR` : `From ${price} EUR`}
-            </p>
-            <StorageSelector
-              options={phoneDetails.storageOptions}
-              selected={selectedStorage}
-              onChange={setSelectedStorage}
-            />
-            <ColorSelector
-              options={phoneDetails.colorOptions}
-              selected={selectedColor}
-              onChange={setSelectedColor}
-            />
+            <div className="phone-details__heading">
+              <h1 className="phone-details__name">{phoneDetails.name}</h1>
+              <p className="phone-details__price">
+                {selectedStorage ? `${price} EUR` : `From ${price} EUR`}
+              </p>
+            </div>
+
+            <div className="phone-details__selectors">
+              <StorageSelector
+                options={phoneDetails.storageOptions}
+                selected={selectedStorage}
+                onChange={setSelectedStorage}
+              />
+              <ColorSelector
+                options={phoneDetails.colorOptions}
+                selected={selectedColor}
+                onChange={setSelectedColor}
+              />
+            </div>
+
             <button
               className="phone-details__add-btn"
               disabled={!selectedStorage || !selectedColor}

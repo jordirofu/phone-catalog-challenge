@@ -2,11 +2,11 @@
 @use '../mixins' as *;
 
 .phone-specs {
-  @include page-padding-detail;
+  @include details-content-box;
   margin-bottom: 64px;
 
   &__title {
-    font-size: 18px;
+    font-size: $font-size-lg;
     font-weight: normal;
     text-transform: uppercase;
     padding-bottom: 16px;
@@ -16,7 +16,7 @@
   &__table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 12px;
+    font-size: $font-size-sm;
   }
 
   &__row {

@@ -12,3 +12,10 @@ $color-lines: #666; // separadores estructurales: grid, search, specs
 $color-selector-unselected: #ccc; // bordes/outlines de selectores en reposo
 $color-selector-selected: #000; // bordes/outlines de selectores seleccionados
 $color-text-disabled: #888; // texto del botón disabled
+$color-danger: #df0000; // texto de acción destructiva ("Remove")
+
+$font-size-xs: 10px;
+$font-size-sm: 12px; // base por defecto
+$font-size-md: 14px;
+$font-size-lg: 20px;
+$font-size-xl: 24px;

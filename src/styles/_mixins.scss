@@ -45,8 +45,8 @@
   }
 
   @media (min-width: $bp-desktop) {
-    padding-left: $padding-detail-desktop;
-    padding-right: $padding-detail-desktop;
+    padding-left: max(#{$padding-desktop}, calc((100% - #{$details-content-max-width}) / 2));
+    padding-right: max(#{$padding-desktop}, calc((100% - #{$details-content-max-width}) / 2));
   }
 }
 

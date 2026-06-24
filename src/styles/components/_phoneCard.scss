@@ -1,3 +1,5 @@
+@use '../variables' as *;
+
 .phone-card {
   display: flex;
   flex-direction: column;
@@ -71,19 +73,19 @@
 
   &__brand {
     display: block;
-    font-size: 10px;
+    font-size: $font-size-xs;
     color: #888;
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
 
   &__name {
-    font-size: 12px;
+    font-size: $font-size-sm;
     text-transform: uppercase;
   }
 
   &__price {
-    font-size: 12px;
+    font-size: $font-size-sm;
     white-space: nowrap;
     flex-shrink: 0;
   }
