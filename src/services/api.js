@@ -14,12 +14,12 @@ export async function getPhones(searchText = '') {
         params.append('search', searchText)
     }
     const data = await apiFetch(`${baseurl}?${params}`)
-    const phones = data.map(createPhone)
 
-    if (searchText) {
-        return uniqueBy(phones, 'id')
-    }
-    return fetchPhonesUntilFull(phones)
+    const rawPhones = searchText
+        ? uniqueBy(data, 'id')
+        : await collectRawPhonesUntilLimit(data)
+
+    return rawPhones.map(createPhone)
 }
 
 export async function getPhoneById(id) {
@@ -35,13 +35,15 @@ async function apiFetch(endpoint = baseurl) {
     return response.json()
 }
 
-async function fetchPhonesUntilFull(initialPhones) {
-    const unique = uniqueBy(initialPhones, 'id')
-    if (unique.length === limit) return unique
+// Devuelve datos crudos de la API (sin mapear), deduplicados y recortados a `limit`.
+async function collectRawPhonesUntilLimit(initialData) {
+    const unique = uniqueBy(initialData, 'id')
+    if (unique.length === limit) {
+        return unique
+    }
 
     const params = new URLSearchParams({ offset: limit })
     const batch = await apiFetch(`${baseurl}?${params}`)
-    const candidates = batch.map(createPhone)
 
-    return uniqueBy([...unique, ...candidates], 'id').slice(0, limit)
+    return uniqueBy([...unique, ...batch], 'id').slice(0, limit)
 }

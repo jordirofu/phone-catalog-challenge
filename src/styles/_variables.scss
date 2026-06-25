@@ -7,11 +7,12 @@ $padding-mobile: 16px;
 $padding-tablet: 40px;
 $padding-desktop: 100px;
 $details-content-max-width: 1200px;
+$spacing-section: 64px; // separación entre secciones de la página de detalle
 
 $color-lines: #666; // separadores estructurales: grid, search, specs
 $color-selector-unselected: #ccc; // bordes/outlines de selectores en reposo
 $color-selector-selected: #000; // bordes/outlines de selectores seleccionados
-$color-text-disabled: #888; // texto del botón disabled
+$color-text-muted: #888; // texto gris secundario (brand, disabled, estados de lista)
 $color-danger: #df0000; // texto de acción destructiva ("Remove")
 
 $font-size-xs: 10px;

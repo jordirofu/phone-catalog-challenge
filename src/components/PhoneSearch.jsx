@@ -5,8 +5,6 @@ export default function PhoneSearch({
   loading,
   error,
 }) {
-  console.log(count)
-
   return (
     <div className="phone-search">
       <input

@@ -1,4 +1,5 @@
 @use '../variables' as *;
+@use '../mixins' as *;
 
 .cart-summary {
   position: sticky;
@@ -39,26 +40,10 @@
     }
   }
 
-  &__continue,
-  &__pay {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 48px;
-    font-size: $font-size-sm;
-    text-transform: uppercase;
-    cursor: pointer;
-
-    @media (min-width: $bp-desktop) {
-      height: 56px;
-    }
-  }
-
   &__continue {
+    @include button-base;
+    @include button-secondary;
     flex: 1;
-    border: 1px solid #000;
-    background-color: #fff;
-    color: inherit;
     text-decoration: none;
 
     @media (min-width: $bp-tablet) {
@@ -72,10 +57,9 @@
   }
 
   &__pay {
+    @include button-base;
+    @include button-primary;
     flex: 1;
-    border: none;
-    background-color: #000;
-    color: #fff;
 
     @media (min-width: $bp-tablet) {
       flex: 0 0 260px;

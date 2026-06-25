@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
-    margin-bottom: 64px;
+    margin-bottom: $spacing-section;
     @include details-content-box;
 
     @media (min-width: $bp-tablet) {
@@ -17,13 +17,11 @@
   }
 
   &__image {
+    @include image-contain;
     flex: none;
     align-self: flex-start;
     width: 260px;
     height: 273px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     @media (min-width: $bp-tablet) {
       width: 337px;
@@ -33,13 +31,6 @@
     @media (min-width: $bp-desktop) {
       width: 510px;
       height: 630px;
-    }
-
-    img {
-      max-width: 100%;
-      max-height: 100%;
-      width: auto;
-      height: auto;
     }
   }
 
@@ -78,7 +69,6 @@
 
   &__name {
     font-size: $font-size-lg;
-    font-weight: normal;
     text-transform: uppercase;
 
     @media (min-width: $bp-desktop) {
@@ -95,20 +85,8 @@
   }
 
   &__add-btn {
+    @include button-base;
+    @include button-primary;
     width: 100%;
-    padding: 16px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    font-size: $font-size-sm;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-
-    &:disabled {
-      background-color: #e0e0e0;
-      color: $color-text-disabled;
-      cursor: default;
-    }
   }
 }

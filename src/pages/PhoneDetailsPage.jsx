@@ -36,9 +36,15 @@ export default function PhoneDetailsPage() {
     })
   }
 
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error loading phone.</p>
-  if (!phoneDetails) return null
+  if (loading) {
+    return <p>Loading...</p>
+  }
+  if (error) {
+    return <p>Error loading phone.</p>
+  }
+  if (!phoneDetails) {
+    return null
+  }
 
   const price = selectedStorage?.price ?? phoneDetails.basePrice
   const imageUrl =

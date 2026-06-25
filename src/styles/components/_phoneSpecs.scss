@@ -3,11 +3,10 @@
 
 .phone-specs {
   @include details-content-box;
-  margin-bottom: 64px;
+  margin-bottom: $spacing-section;
 
   &__title {
     font-size: $font-size-lg;
-    font-weight: normal;
     text-transform: uppercase;
     padding-bottom: 16px;
     border-bottom: 1px solid $color-lines;

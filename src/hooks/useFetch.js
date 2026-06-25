@@ -12,8 +12,10 @@ export function useFetch(fetchFn, param) {
         setError(null)
         const result = await fetchFn(param)
         setData(result)
-      } catch (error) {
-        setError(error)
+      } catch (err) {
+        const normalized = err instanceof Error ? err : new Error(String(err))
+        console.error(normalized)
+        setError(normalized)
       } finally {
         setLoading(false)
       }
