@@ -1,9 +1,10 @@
-import { createBrowserRouter } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
-import Layout from './layouts/layout'
-import PhoneListPage from './pages/PhoneListPage'
-import PhoneDetailsPage from './pages/PhoneDetailsPage'
-import CartPage from './pages/CartPage'
+import { lazy } from 'react'
+import { createBrowserRouter, useParams } from 'react-router-dom'
+import Layout from './layouts/Layout'
+
+const PhoneListPage = lazy(() => import('./pages/PhoneListPage'))
+const PhoneDetailsPage = lazy(() => import('./pages/PhoneDetailsPage'))
+const CartPage = lazy(() => import('./pages/CartPage'))
 
 function PhoneDetailsRoute() {
   const { id } = useParams()
