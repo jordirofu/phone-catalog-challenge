@@ -34,7 +34,6 @@ async function apiFetch(endpoint = baseurl) {
   return response.json()
 }
 
-// Devuelve datos crudos de la API (sin mapear), deduplicados y recortados a `limit`.
 async function collectRawPhonesUntilLimit(initialData) {
   const unique = uniqueBy(initialData, 'id')
   if (unique.length === limit) {

@@ -1,8 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
-import PhoneCard from './PhoneCard'
-import { useDragScroll } from '../hooks/useDragScroll'
-
-const THUMB_SCALE = 0.25 // 1 = proporción real; <1 = más estrecho
+import PhoneCard from '../common/PhoneCard'
+import { useDragScroll } from '../../hooks/useDragScroll'
 
 export default function SimilarPhones({ phones }) {
   const { ref, isDragging, dragHandlers } = useDragScroll()
@@ -14,12 +12,9 @@ export default function SimilarPhones({ phones }) {
       return
     }
     const { clientWidth, scrollWidth, scrollLeft } = track
-    const maxScroll = scrollWidth - clientWidth
-    const width = (clientWidth / scrollWidth) * 100 * THUMB_SCALE
-    const progress = maxScroll > 0 ? scrollLeft / maxScroll : 0
     setThumb({
-      width,
-      left: progress * (100 - width),
+      width: (clientWidth / scrollWidth) * 100,
+      left: (scrollLeft / scrollWidth) * 100,
     })
   }, [ref])
 

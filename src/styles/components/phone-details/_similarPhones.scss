@@ -1,5 +1,5 @@
-@use '../variables' as *;
-@use '../mixins' as *;
+@use '../../variables' as *;
+@use '../../mixins' as *;
 
 .similar-phones {
   @include page-bleed;
@@ -19,7 +19,6 @@
     list-style: none;
     cursor: grab;
 
-    // Oculta la barra de scroll nativa (usamos la nuestra)
     scrollbar-width: none;
 
     &::-webkit-scrollbar {

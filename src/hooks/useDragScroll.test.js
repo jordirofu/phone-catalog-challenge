@@ -2,12 +2,10 @@ import { describe, it, expect, vi } from 'vitest'
 import { renderHook, act } from '@testing-library/react'
 import { useDragScroll } from './useDragScroll'
 
-// Evento de ratón falso: solo lo que el hook lee (pageX) y llama (preventDefault)
 function mouseEvent(pageX) {
   return { pageX, preventDefault: vi.fn() }
 }
 
-// Evento de click falso: lo que onClickCapture puede llamar
 function clickEvent() {
   return { preventDefault: vi.fn(), stopPropagation: vi.fn() }
 }
@@ -37,7 +35,6 @@ describe('useDragScroll', () => {
     act(() => result.current.dragHandlers.onMouseDown(mouseEvent(200)))
     act(() => result.current.dragHandlers.onMouseMove(mouseEvent(150)))
 
-    // walk = 150 - 200 = -50 ; scrollLeft = 100 - (-50) = 150
     expect(track.scrollLeft).toBe(150)
   })
 
@@ -56,7 +53,7 @@ describe('useDragScroll', () => {
     result.current.ref.current = { offsetLeft: 0, scrollLeft: 0 }
 
     act(() => result.current.dragHandlers.onMouseDown(mouseEvent(0)))
-    act(() => result.current.dragHandlers.onMouseMove(mouseEvent(20))) // 20 > 5
+    act(() => result.current.dragHandlers.onMouseMove(mouseEvent(20)))
 
     const click = clickEvent()
     act(() => result.current.dragHandlers.onClickCapture(click))
@@ -70,7 +67,7 @@ describe('useDragScroll', () => {
     result.current.ref.current = { offsetLeft: 0, scrollLeft: 0 }
 
     act(() => result.current.dragHandlers.onMouseDown(mouseEvent(0)))
-    act(() => result.current.dragHandlers.onMouseMove(mouseEvent(3))) // 3 < 5
+    act(() => result.current.dragHandlers.onMouseMove(mouseEvent(3)))
 
     const click = clickEvent()
     act(() => result.current.dragHandlers.onClickCapture(click))

@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getPhoneById } from '../services/api'
-import BackBar from '../components/BackBar'
-import PhoneSpecs from '../components/PhoneSpecs'
-import StorageSelector from '../components/StorageSelector'
-import ColorSelector from '../components/ColorSelector'
+import BackBar from '../components/common/BackBar'
+import PhoneSpecs from '../components/phone-details/PhoneSpecs'
+import StorageSelector from '../components/phone-details/StorageSelector'
+import ColorSelector from '../components/phone-details/ColorSelector'
 import { useCart } from '../hooks/useCart'
 import { useFetch } from '../hooks/useFetch'
-import SimilarPhones from '../components/SimilarPhones'
+import SimilarPhones from '../components/phone-details/SimilarPhones'
 
 const buildSpecsTable = (phone) => ({
   brand: phone.brand,

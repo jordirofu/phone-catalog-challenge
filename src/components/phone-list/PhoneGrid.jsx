@@ -1,4 +1,4 @@
-import PhoneCard from './PhoneCard'
+import PhoneCard from '../common/PhoneCard'
 
 export default function PhoneGrid({ phones, loading, error, searchTerm }) {
   if (loading) {

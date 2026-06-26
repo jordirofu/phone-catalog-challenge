@@ -1,7 +1,7 @@
 import { Suspense } from 'react'
 import { Outlet } from 'react-router-dom'
-import CartIcon from '../components/CartIcon'
-import Logo from '../components/Logo'
+import CartIcon from '../components/layout/CartIcon'
+import Logo from '../components/layout/Logo'
 
 export default function Layout() {
   return (

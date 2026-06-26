@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { getPhones } from '../services/api'
-import PhoneSearch from '../components/PhoneSearch'
-import PhoneGrid from '../components/PhoneGrid'
+import PhoneSearch from '../components/phone-list/PhoneSearch'
+import PhoneGrid from '../components/phone-list/PhoneGrid'
 import { useFetch } from '../hooks/useFetch'
 import { useDebounce } from '../hooks/useDebounce'
 

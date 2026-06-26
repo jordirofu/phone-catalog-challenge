@@ -1,6 +1,6 @@
 import { useCart } from '../hooks/useCart'
-import CartItem from '../components/CartItem'
-import CartSummary from '../components/CartSummary'
+import CartItem from '../components/cart/CartItem'
+import CartSummary from '../components/cart/CartSummary'
 
 export default function CartPage() {
   const { state } = useCart()
