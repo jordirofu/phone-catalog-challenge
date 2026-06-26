@@ -3,6 +3,7 @@
 .phone-grid {
   &__list {
     list-style: none;
+    margin-bottom: $spacing-section;
     display: grid;
     grid-template-columns: 1fr;
     border-top: 1px solid $color-lines;

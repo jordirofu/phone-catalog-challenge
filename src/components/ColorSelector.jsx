@@ -7,17 +7,22 @@ export default function ColorSelector({ options, selected, onChange }) {
   return (
     <div className="color-selector">
       <p className="color-selector__label">COLOR. PICK YOUR FAVOURITE.</p>
-      <div className="color-selector__options">
-        {options.map((option) => (
-          <button
-            key={option.name}
-            className={`color-selector__swatch${selected?.name === option.name ? ' color-selector__swatch--selected' : ''}`}
-            style={{ backgroundColor: option.hexCode }}
-            onClick={() => onChange(option)}
-            onMouseEnter={() => setHovered(option)}
-            onMouseLeave={() => setHovered(null)}
-          />
-        ))}
+      <div className="color-selector__options" role="group" aria-label="Color">
+        {options.map((option) => {
+          const isSelected = selected?.name === option.name
+          return (
+            <button
+              key={option.name}
+              className={`color-selector__swatch${isSelected ? ' color-selector__swatch--selected' : ''}`}
+              style={{ backgroundColor: option.hexCode }}
+              aria-label={option.name}
+              aria-pressed={isSelected}
+              onClick={() => onChange(option)}
+              onMouseEnter={() => setHovered(option)}
+              onMouseLeave={() => setHovered(null)}
+            />
+          )
+        })}
       </div>
       <p className="color-selector__name">{displayName}</p>
     </div>

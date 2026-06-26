@@ -6,7 +6,7 @@ export default function PhoneSpecs({ specs }) {
         <tbody>
           {Object.entries(specs).map(([key, value]) => (
             <tr key={key} className="phone-specs__row">
-              <th className="phone-specs__label">
+              <th scope="row" className="phone-specs__label">
                 {key.replace(/([A-Z])/g, ' $1').toUpperCase()}
               </th>
               <td className="phone-specs__value">{value}</td>

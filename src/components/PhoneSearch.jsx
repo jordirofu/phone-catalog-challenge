@@ -11,12 +11,13 @@ export default function PhoneSearch({
         className="phone-search__input"
         type="search"
         placeholder="Search for a smartphone..."
+        aria-label="Search for a smartphone"
         value={searchTerm}
         onChange={(e) => onChange(e.target.value)}
       />
-      {!loading && !error && (
-        <p className="phone-search__count">{count} results</p>
-      )}
+      <p className="phone-search__count" aria-live="polite">
+        {!loading && !error ? `${count} results` : ''}
+      </p>
     </div>
   )
 }

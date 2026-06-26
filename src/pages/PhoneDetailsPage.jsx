@@ -37,10 +37,10 @@ export default function PhoneDetailsPage() {
   }
 
   if (loading) {
-    return <p>Loading...</p>
+    return <p role="status">Loading...</p>
   }
   if (error) {
-    return <p>Error loading phone.</p>
+    return <p role="alert">Error loading phone.</p>
   }
   if (!phoneDetails) {
     return null

@@ -17,12 +17,12 @@
     width: 24px;
     height: 24px;
     border: 2px solid #fff;
-    outline: 1px solid $color-selector-unselected;
+    box-shadow: 0 0 0 1px $color-selector-unselected;
     cursor: pointer;
 
     &:hover,
     &--selected {
-      outline-color: $color-selector-selected;
+      box-shadow: 0 0 0 1px $color-selector-selected;
     }
   }
 

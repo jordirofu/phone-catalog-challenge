@@ -13,6 +13,7 @@ export default function PhoneListPage() {
 
   return (
     <>
+      <h1 className="visually-hidden">Smartphone catalog</h1>
       <PhoneSearch
         searchTerm={searchTerm}
         onChange={setSearchTerm}

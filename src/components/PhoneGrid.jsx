@@ -2,12 +2,16 @@ import PhoneCard from './PhoneCard'
 
 export default function PhoneGrid({ phones, loading, error, searchTerm }) {
   if (loading) {
-    return <p className="phone-grid__loading">Cargando...</p>
+    return (
+      <p className="phone-grid__loading" role="status">
+        Loading...
+      </p>
+    )
   }
   if (error) {
     return (
-      <p className="phone-grid__error">
-        Ha ocurrido un error al cargar los teléfonos. Inténtalo de nuevo.{' '}
+      <p className="phone-grid__error" role="alert">
+        Something went wrong loading the phones. Please try again.{' '}
         {error.message}
       </p>
     )

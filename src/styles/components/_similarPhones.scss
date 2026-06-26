@@ -17,6 +17,19 @@
     display: flex;
     overflow-x: auto;
     list-style: none;
+    cursor: grab;
+
+    // Oculta la barra de scroll nativa (usamos la nuestra)
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &--dragging {
+      cursor: grabbing;
+      user-select: none;
+    }
 
     li {
       flex: 0 0 344px;
@@ -45,5 +58,23 @@
         height: auto;
       }
     }
+  }
+
+  &__scrollbar {
+    @include content-inset;
+    margin-top: 16px;
+  }
+
+  &__line {
+    position: relative;
+    height: 2px;
+    background-color: $color-selector-unselected;
+  }
+
+  &__thumb {
+    position: absolute;
+    top: -1px;
+    height: 4px;
+    background-color: $color-lines;
   }
 }

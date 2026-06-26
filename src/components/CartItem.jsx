@@ -17,6 +17,7 @@ export default function CartItem({ item }) {
         <span className="cart-item__price">{item.price} EUR</span>
         <button
           className="cart-item__remove"
+          aria-label={`Remove ${item.name}`}
           onClick={() => removeItem(item.id)}
         >
           Remove
